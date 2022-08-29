@@ -1,0 +1,7 @@
+git_url("git@github.com:imudasirahmed/Certificate.git")
+
+storage_mode("git")
+
+type("development")
+
+force_for_new_devices(true)

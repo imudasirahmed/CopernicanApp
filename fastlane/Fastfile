@@ -1,0 +1,32 @@
+default_platform(:ios)
+
+platform :ios do
+  lane :register_app do
+    produce(
+      username: "i.mudasir.ahmed@gmail.com",
+      app_identifier: "com.mudasir.CopernicanApp",
+      app_name: "CopernicanApp",
+      team_name: "Mudasir Ahmed",
+      itc_team_name: "Mudasir Ahmed"
+    )
+  end
+
+  lane :sync_all_development do
+    match(type: "development")
+  end
+
+  lane :build_development do
+    gym(
+      output_directory: "build_Development",
+      export_method: "development"
+    )
+  end
+
+  lane :build_appstore do
+    gym(
+      output_directory: "build_appstore",
+      export_method: "app-store"
+    )
+  end
+
+end
